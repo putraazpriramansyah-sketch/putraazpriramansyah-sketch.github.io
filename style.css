@@ -1,0 +1,53 @@
+body {
+    background: #f5f5f5;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    text-align: center;
+    width: 340px;
+}
+
+/*Bagian FOTO*/
+.profile {
+    width: 120px;
+    border-radius: 12px;
+}
+
+/* TEXT */
+h1 {
+    margin: 10px 0;
+    font-size: 22px;
+}
+
+p {
+    color: #555;
+    font-size: 14px;
+}
+
+.info p {
+    margin: 4px 0;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+.btn:hover {
+    background: #333;
+}
