@@ -1,190 +1,250 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
     margin: 0;
-    background: #01080d;
-    color: rgb(255, 255, 255);
-    font-family: Arial, sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
-.hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    justify-content: space-between;
-    padding: 100px 90px;
-    gap: 12x; /* jarak antara teks dan logo */
-}
-
-.text h1 {
-    font-size: 50px;
-}
-
-.logo {
-    margin-left: 35px !important;
-}
-
-.text span {
-    color: rgb(0, 255, 225);
-}
-
-.profile img {
-    width: 220px;
-    border-radius: 50%;
-    box-shadow: 0 0 30px rgb(0, 238, 255);
-    transform: translate(-40px, 30px);
-}
-
-.social {
-    display: flex;
-    align-items: center;
-    margin-top: 30px;
-}
-
-.social a {
-    margin-right: 20px;
-    font-size: 18px;
-    opacity: 0.8;
-}
-
-.social a:hover {
-    opacity: 1;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-}
-
-.circle {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: #0a4655;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
+body {
+    background: #080808;
     color: white;
-    font-size: 26px;
-    position: relative;
-    overflow: visible;
+    overflow-x: hidden;
 }
 
-/* icon di atas garis */
-.circle i {
-    z-index: 2;
-}
-
-/* SVG GARIS */
-.circle svg {
-    position: absolute;
-    inset: -4px;
-    width: calc(100% + 8px);
-    height: calc(100% + 8px);
-    transform: rotate(-90deg);
-    pointer-events: none;
-}
-
-.circle circle {
-    fill: none;
-    stroke: #00ffd5;
-    stroke-width: 2;
-    stroke-dasharray: 302;
-    stroke-dashoffset: 302;
-    transition: stroke-dashoffset 0.6s ease;
-}
-
-.circle:hover circle {
-    stroke-dashoffset: 1;
-    filter: drop-shadow(0 0 6px #00ffd5);
-    filter: drop-shadow(0 0 14px #00ffd5);
-}
-
-
-/* Garis Putar ditepi*/
-.circle::after {
-    content: "";
-    position: absolute;
-    top: -3px;
-    left: -3px;
-    right: -3px;
-    bottom: -3px;
-    border-radius: 50%;
-    border: 2px solid #00ffd5;
-    opacity: 0;
-    transition: 0.5s ease;
-}
-
-/* hover aktif */
-.circle:hover::after {
-    opacity: 1;
-}
-
-/*icon tetap di atas */
-.circle i {
-    position: relative;
-    z-index: 2;
-}
-
-/* animasi muter2 nya */
-@keyframes spin {
-    from { transform: rotate(0deg);}
-    to { transform: rotate(360deg);}
-}
-
-
-
-.navbar {
-    display: flex;
-    justify-content: space-between; 
-    /* logo kiri, menu kanan */
-    align-items: center;
-    padding: 15px 25px;
+/* --- LOADER --- */
+#loader {
     position: fixed;
-    width: 100%;
-    top: 0;
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur (10px);
+    inset: 0;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    transition: 0.8s ease-in-out;
+}
+#loader.fade-out { transform: translateY(-100%); }
+.loader-content { text-align: center; }
+.anim-sub { color: #00ffd5; letter-spacing: 2px; }
+.anim-title { font-size: 3rem; margin: 10px 0; }
+.loading-bar { width: 0; height: 3px; background: #00ffd5; animation: fillBar 2s forwards; }
+@keyframes fillBar { to { width: 100%; } }
+
+/* --- NAVBAR --- */
+.navbar {
+    position: fixed;
+    top: 0; width: 100%;
+    padding: 20px 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(8, 8, 8, 0.8);
+    backdrop-filter: blur(10px);
     z-index: 1000;
 }
+.logo { font-size: 25px; font-weight: 700; color: #00ffd5; }
 
-.logo {
-    font-size: 22px;
-    font-weight: bold;
-    color: #00ffd5;
-}
+    .nav-links {
+        display: flex;
+        gap: 35px;
+    }
+   .nav-links a {
+         position: relative;
+         text-decoration: none;
+         color: white;
+         font-weight: 500;
+         padding: 2px 0;
+    }
 
-nav a {
-    margin-left: 15px;
-    text-decoration: none;
-    color: white;
-    font-size: 14px;
-    position: relative;
-}
+    .nav-links a::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: #00ffd5;
+        transition: width 0.3s ease-in-out;
+    }
 
-nav a:hover {
-    color: #00ffd5;
-}
+    .nav-links a:hover::after {
+        width: 100%;
+    }
+.nav-links a:hover { color: #00ffd5; }
 
-nav {
+/* --- HERO SECTION --- */
+.hero {
+    height: 100vh;
     display: flex;
-    flex-wrap: wrap;
-    margin-right: 50px;
+    align-items: center;
+    padding: 0 5%;
+    gap: 2rem;
 }
+.hero-text { flex: 1; }
+.hero-text h1 { font-size: 50px; font-weight: 700; line-height: 1.2; }
+.hero-text h3 { font-size: 25px; margin: 10px 0; }
+.typing-text { color: #00ffd5; }
+.hero-text p { margin: 20px 0; line-height: 1.6; color: #eee; }
 
-/* Garis Bawah */
-nav a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -5px;
-    width: 0;
-    height: 2px;
-    background: #00ffd5;
+.social-icons { margin-bottom: 30px; }
+.social-icons a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px; height: 45px;
+    border: 2px solid #00ffd5;
+    border-radius: 50%;
+    color: #00ffd5;
+    text-decoration: none;
+    margin-right: 15px;
     transition: 0.3s;
 }
+.social-icons a:hover { background: #00ffd5; color: #080808; box-shadow: 0 0 15px #00ffd5; }
 
-nav a:hover::after {
-    width: 100%;
+.btn-hire {
+    padding: 10px 40px;
+    background: #00ffd5;
+    color: #080808;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: 600;
+    box-shadow: 0 0 5px #00ffd5;
+    transition: 0.3s;
+    margin-right: 15px;
 }
 
+/* --- PHOTO PROFILE --- */
+.hero-img { flex: 1; display: flex; justify-content: center; }
+.img-box {
+    width: 350px; height: 350px;
+    border-radius: 50%;
+    border: 5px solid #00ffd5;
+    overflow: hidden;
+    box-shadow: 0 0 50px #00ffd5;
+}
+.img-box img { width: 100%; height: 100%; object-fit: cover; }
 
+
+/* ikon menu sembunyi di di dekstop */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    color: #00ffd5;
+    cursor: pointer;
+}
+
+/* --- RESPONSIVE (UNTUK HP) --- */
+@media (max-width: 768px) {
+    /* munculin ikon di hp */
+    .menu-icon {
+        display: block;
+    }
+
+    .nav-links {
+        position: fixed; 
+        top: 0; 
+        right: -100%;
+        /* sembunyi di kanann luar layar */
+        width: 70%; 
+        height: 100vh; 
+        background: rgba(8, 8, 8, 0.95);
+        display: flex; 
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        justify-content: center;
+        transition: 0.5s ease;
+
+        z-index: 1001;
+
+        .nav-links.active {
+            right: 0;
+        }
+    }
+
+    /* pas menu aktif, dia geser msuk ke layar */
+    .nav-links.active { right: 0; }
+
+    .hero { 
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 100px;
+        height: auto;
+    }
+}
+
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #080808; /*warna backgroudn sama*/
+    padding: 80px 10%;
+    min-height: 100vh;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem; /* jarak antara foto dna teks */
+}
+
+.about-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.about-img img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    /*bentuk kotak tumpul biar beda sama profil diatas*/
+    border: 5px solid #00ffd5;
+    box-shadow: 0 0 30px #00ffd5;
+    object-fit: cover;
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    font-size: 45px;
+    margin-bottom: 10px;
+}
+
+.about-text h2 span {
+    color: #00ffd5;
+}
+.about-text h3 {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 30px;
+}
+
+.about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 40px;
+}
+
+/*biar pas di hp jadi tumpuk atas bwah*/
+@media (max-width: 992px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .about-img img {
+        width: 250px;
+        height: 250px;
+    }
+
+    .about-text h2 {
+        font-size: 35px;
+    }
+}
