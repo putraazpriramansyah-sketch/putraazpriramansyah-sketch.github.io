@@ -18,6 +18,10 @@ body {
     font-size: 50px;
 }
 
+.logo {
+    margin-left: 65px;
+}
+
 .text span {
     color: rgb(0, 255, 225);
 }
@@ -182,21 +186,3 @@ nav a::after {
 nav a:hover::after {
     width: 100%;
 }
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-@media only screen and (max-width: 600px)
-{
-    .menu {
-        font-size: 14px;
-    }
-    .container {
-        width: 95%;
-    }
-}
-
-
-
