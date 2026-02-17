@@ -19,7 +19,7 @@ body {
 }
 
 .logo {
-    margin-left: 65px !important;
+    margin-left: 35px !important;
 }
 
 .text span {
@@ -186,4 +186,5 @@ nav a::after {
 nav a:hover::after {
     width: 100%;
 }
+
 
