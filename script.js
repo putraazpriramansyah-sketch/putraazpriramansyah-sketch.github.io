@@ -2,15 +2,15 @@
 window.addEventListener('load', () => {
     const loader = document.getElementById('loader');
     setTimeout(() => {
+
         loader.classList.add('fade-out');
-        setTimeout(() => { loader.style.display = 'none'; }, 800);
-    }, 2500);
+            setTimeout(() => {
+             loader.style.display = 'none';
 
-    document.body.style.overflowY = "auto";
-    // ---------------- //
-
-    setTimeout(() => {
-        loader.style.display = 'none';}, 800);}, 2500);        
+    document.body.style.overflowY = "auto"; 
+            }, 800);
+        }, 2500);   
+});   
 
 // Typing Effect
 const textElement = document.querySelector(".typing-text");
@@ -42,10 +42,18 @@ function typeEffect() {
 }
 typeEffect();
 
-const menuIcon = document.querySelector('.menu-icon');
-const navLinks = document.querySelector('.navLinks');
+const menuIcon = document.querySelector('#menu-icon');
+const navLinks = document.querySelector('.nav-links');
 
 menuIcon.onclick = () => {
 
-navLinks.classList.toggle('active'); console.log;
+navLinks.classList.toggle('active'); 
+    console.log("Tombol Diklik");
 };
+
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.onclick = () => {
+
+navLinks.classList.remove('active');
+    };
+});

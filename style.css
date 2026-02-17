@@ -148,8 +148,7 @@ body {
     .nav-links {
         position: fixed; 
         top: 0; 
-        right: -100%;
-        /* sembunyi di kanann luar layar */
+        right: -100%; /* sembunyi di kanann luar layar */
         width: 70%; 
         height: 100vh; 
         background: rgba(8, 8, 8, 0.95);
@@ -159,16 +158,14 @@ body {
         gap: 30px;
         justify-content: center;
         transition: 0.5s ease;
-
-        z-index: 1001;
-
-        .nav-links.active {
-            right: 0;
-        }
-    }
+        z-index: 2000;
+}
 
     /* pas menu aktif, dia geser msuk ke layar */
-    .nav-links.active { right: 0; }
+    .nav-links.active {
+         right: 0; 
+         z-index: 2001;
+    }
 
     .hero { 
         flex-direction: column-reverse;
