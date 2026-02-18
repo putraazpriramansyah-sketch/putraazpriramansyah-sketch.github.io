@@ -14,7 +14,7 @@ window.addEventListener('load', () => {
 
 // Typing Effect
 const textElement = document.querySelector(".typing-text");
-const words = ["Beginner Developer", "Photographer", "Student"];
+const words = ["Guid", "Developer", "Azpri", "GuideFs"];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -57,3 +57,5 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 navLinks.classList.remove('active');
     };
 });
+
+

@@ -22,8 +22,9 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 10000;
-    transition: 0.8s ease-in-out;
+    transition: 0.5s ease;
 }
+
 #loader.fade-out { transform: translateY(-100%); }
 .loader-content { text-align: center; }
 .anim-sub { color: #00ffd5; letter-spacing: 2px; }
@@ -43,7 +44,11 @@ body {
     backdrop-filter: blur(10px);
     z-index: 1000;
 }
-.logo { font-size: 25px; font-weight: 700; color: #00ffd5; }
+.logo { 
+    font-size: 20px; 
+    font-weight: 700; 
+    color: #00ffd5;
+ }
 
     .nav-links {
         display: flex;
@@ -53,7 +58,7 @@ body {
          position: relative;
          text-decoration: none;
          color: white;
-         font-weight: 500;
+         font-weight: 500px;
          padding: 2px 0;
     }
 
@@ -98,30 +103,80 @@ body {
     color: #00ffd5;
     text-decoration: none;
     margin-right: 15px;
-    transition: 0.3s;
+    transition: 0.2s ease-in-out;
 }
-.social-icons a:hover { background: #00ffd5; color: #080808; box-shadow: 0 0 15px #00ffd5; }
+.social-icons a:hover { 
+    background: #00ffd5; 
+    color: #080808; 
+    box-shadow: 0 0 40px #00ffd5; 
+    width: 50px;
+    height: 50px;
+    justify-content: center;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 50%;
+}
 
+.social-icons .ig:hover {
+    background: black;
+    border-radius: 50%;
+    box-shadow: 0 0 20px rgb(170, 51, 116);
+    border: rgb(170, 51, 116);
+    color: rgb(170, 51, 116);
+}
+
+.social-icons .wa:hover {
+    background: black;
+    border-radius: 50%;
+    border: #25de66;
+    box-shadow: 0 0 20px #25de66;
+    color: #25de66;
+}
+
+.social-icons .tt:hover {
+    background: black;
+    border: white;
+    box-shadow: 0 0 30px #eee;
+    border-radius: 50%;
+    color: #eee;
+}
 .btn-hire {
     padding: 10px 40px;
     background: #00ffd5;
     color: #080808;
     text-decoration: none;
-    border-radius: 40px;
+    border-radius: 20px;
     font-weight: 600;
     box-shadow: 0 0 5px #00ffd5;
     transition: 0.3s;
-    margin-right: 15px;
 }
+
+.btn-hire:hover {
+    box-shadow: 0px 0px 15px #00ffd5;
+    background: rgb(23, 20, 20);
+    padding: 10px 40px;
+    font-size: 95%;
+    color: #00ffd5 ;
+}
+
 
 /* --- PHOTO PROFILE --- */
 .hero-img { flex: 1; display: flex; justify-content: center; }
 .img-box {
     width: 300px; height: 300px;
     border-radius: 50%;
-    border: 5px solid #00ffd5;
+    border: 2px solid #00ffd5;
     overflow: hidden;
     box-shadow: 0 0 20px #00ffd5;
+    transition: 0.3s ease-in-out;
+}
+
+.img-box:hover {
+    width: 280px; height: 280px;
+    box-shadow: 0 0 45px rgb(92, 225, 204);
+    transition: 0.2s ease-out;
+    border: 7px solid rgb(92, 225, 204);
+    border-radius: 50%;
 }
 .img-box img { 
     width: 100%;
@@ -173,6 +228,39 @@ body {
         padding-top: 100px;
         height: auto;
     }
+    
+    .hero-text {
+        font-size: 80%;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .hero-text h1 { font-size: 40px; font-weight: 700; line-height: 1.2; }
+    .hero-text h3 { font-size: 20px; margin: 10px 0; }
+    .typing-text { color: #00ffd5; font-size: 40px;}
+
+    .img-box {
+        width: 190px; height: 190px;
+        border-radius: 50%;
+        border: 2px solid #00ffd5;
+        overflow: hidden;
+        box-shadow: 0 0 20px #00ffd5;
+        transition: 0.3s ease-in-out;
+    }
+
+    .img-box:hover {
+         width: 180px; height: 180px;
+         box-shadow: 0 0 25px rgb(92, 225, 204);
+         transition: 0.2s ease-out;
+        border: 7px solid rgb(92, 225, 204);
+        border-radius: 50%;
+    }
+
+    .img-box img { 
+        width: 100%;
+        height: 100%; 
+        object-fit: cover; 
+}
 }
 
 .about {
@@ -197,13 +285,22 @@ body {
 }
 
 .about-img img {
-    width: 350px;
-    height: 350px;
+    width: 300px;
+    height: 300px;
     border-radius: 30%;
     /*bentuk kotak tumpul biar beda sama profil diatas*/
     border: 5px solid #00ffd5;
     box-shadow: 0 0 30px #00ffd5;
     object-fit: cover;
+    transition: 0.5s ease-in-out;
+}
+
+.about-img img:hover {
+    box-shadow: 0 0 50px #00ffd5;
+    border: 8px solid #00ffd5;
+    border-radius: 30%;
+    width: 290px;
+    height: 290px;
 }
 
 .about-text {
@@ -241,11 +338,141 @@ body {
     }
 
     .about-img img {
-        width: 250px;
-        height: 250px;
+        width: 230px;
+        height: 230px;
     }
+
+    .about-img img:hover {
+    box-shadow: 0 0 50px #00ffd5;
+    border: 8px solid #00ffd5;
+    border-radius: 30%;
+    width: 220px;
+    height: 220px;
+}
 
     .about-text h2 {
         font-size: 35px;
     }
+}
+
+/* guidefs official */
+.typing {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: #ffffff;
+    border-right: 1px solid #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 5s steps(21) forwards, blink 0.7s steps(1)30, hideCursor 0s 4s forwards;
+}
+
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 195px; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+@keyframes hideCursor {
+    to { border-right: none;}
+}
+
+
+.text1 {
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.text1:hover {
+    color: white;
+    font-size: 100%;
+    margin-top: 25px;
+    margin-bottom: 30px;
+}
+
+.text2 {
+    text-decoration: none;
+    transition: 0.3s ease-in-out;
+}
+
+.text2:hover {
+    color: white;
+    text-shadow: 0 0 1px #ffffff;
+    font-size: 100%;
+    margin-top: 25px;
+    margin-bottom: 30px;
+    
+}
+
+@keyframes slideLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.slide-left {
+    animation: slideLeft 1s ease forwards;
+}
+
+@media (max-width: 768px) {
+    .typing {
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        margin-top: 5px;
+    }
+
+    .social-icons a {
+        margin-left: 7px;
+        margin-right: 7px;
+    }
+}
+
+.fadeUp {
+    animation: fadeUp both;
+    animation-timeline: view(50% 20%);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px); scale: (0.5);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.imageReveal {
+    animation: imageReveal both;
+    animation-timeline: view(50% auto);
+}
+
+@keyframes imageReveal {
+    from {
+        filter: saturate(0) contrast(4) brightness(.1) blur(5px);
+        opacity: 0;
+        scale: .95;
+        translate: 0 4rem;
+    }
+    to {
+        filter: none;
+        opacity: 1;
+        scale: 1;
+        translate: 0 0;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
 }
