@@ -8,8 +8,8 @@ window.addEventListener('load', () => {
              loader.style.display = 'none';
 
     document.body.style.overflowY = "auto"; 
-            }, 800);
-        }, 2500);   
+            }, 1000);
+        }, 2100);   
 });   
 
 // Typing Effect

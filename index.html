@@ -6,6 +6,8 @@
     <title>GuideFs Official | Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -17,7 +19,8 @@
         </div>
     </div>
 
-    <header class="navbar">
+  
+    <header class="navbar" data-aos="fade-down">
         <div class="logo">Nothing</div>
         <nav class="nav-links">
             <a href="#home">Home</a>
@@ -35,44 +38,65 @@
 
     <section class="hero" id="home">
         <div class="hero-text">
-            <h3 class="fade-up">Welcome to my Website</h3>
-            <h1 class="hero-text">I'm a <span class="typing-text"></span></h1>
-             <h2 class="typing">GuideFs Official</h2>
-            <p class="text1 imageReveal">Website ini diciptakan untuk mempermudah Akses Media Sosial.<br>Tiktok : @langit.guid | Instagram : @ptraaz_pri </p>
-            
+            <div>
+            <h3 class="fadeup">Welcome to my Website</h3>
+            <h1 class="hero-text fadeup1">I'm a <span class="typing-text"></span></h1>
+             <div class="fadeup2">
+            <h2 class="typing">GuideFs Official</h2>
+             </div>
+            <p class="text1 fadeup3">Website ini diciptakan untuk mempermudah Akses Media Sosial.<br>Tiktok : @langit.guid | Instagram : @ptraaz_pri </p>
+            </div>
             <div class="social-icons imageReveal">
-                <a href="https://instagram.com/ptraaz_pri" target="_blank" class="ig"><i class="fab fa-instagram"></i></a>
-                <a href="https://tiktok.com/@langitguid" target="_blank" class="tt"><i class="fab fa-tiktok"></i></a>
-                <a href="https://wa.me/6289516280483" target="_blanks" class="wa"><i class="fab fa-whatsapp"></i></a>
+                <a href="https://instagram.com/ptraaz_pri" target="_blank" class="ig fadeup4"><i class="fab fa-instagram"></i></a>
+                <a href="https://tiktok.com/@langitguid" target="_blank" class="tt fadeup4"><i class="fab fa-tiktok"></i></a>
+                <a href="https://wa.me/6289516280483" target="_blanks" class="wa fadeup4"><i class="fab fa-whatsapp"></i></a>
          </div>
-
             <a href="https://wa.me/6289516280483" class="btn-hire imageReveal">Contact Me</a>
         </div>
+    </div>
 
         <div class="hero-img">
-            <div class="img-box">
-                <img src="guidelogo.png" class="imageReveal" >
+            <div class="img-box zoom-out">
+                <img src="guidelogo.png">
             </div>
         </div>
     </section>
 
     <section class="about" id="about">
-        <div class="about-container fadeUp">
+        <div class="about-container">
             <div class="about-img">
-                <img src="5d811633-d401-4b3b-9a2e-c213e31dc33a.jpeg" class="imageReveal">
+                <img src="5d811633-d401-4b3b-9a2e-c213e31dc33a.jpeg" 
+                 data-aos="fade-right"
+                 data-aos-offset="300"
+                 data-aos-easing="ease-in-sine">
         </div>
 
         <div class="about-text">
-            <h2 class="imageReveal"> About <span>Me</span></h2>
-            <h3 class="imageReveal">Beginner Developer</h3>
-            <p class="text2 fadeUp">Halo! Nama gua Putra Azpriramansyah, seorang pelajar yang hanya gabut untuk ngebuat ni website. Gua hobi dalam fotography, dan gua juga suka langit atau disebut Astrophile. Gua suka gabut dalam foto2 langit secara random. Mungkin website ini akan menjadi tempat mencurahkan apa yang gua foto dan gua liat dan akan gua abadi kan bagi yang baca ni teks</p>
+            <h2 data-aos="fade-up"> About <span>Me</span></h2>
+            <h3 data-aos="fade">Beginner Developer</h3>
+            <p class="text2" data-aos="fade-up">Halo! Nama gua Putra Azpriramansyah, seorang pelajar yang hanya gabut untuk ngebuat ni website. Gua hobi dalam fotography, dan gua juga suka langit atau disebut Astrophile. Gua suka gabut dalam foto2 langit secara random. Mungkin website ini akan menjadi tempat mencurahkan apa yang gua foto dan gua liat dan akan gua abadi kan bagi yang baca ni teks</p>
                 <a href="https://wa.me/6289516280483"
-                class="btn-hire">Call Me</a>
+                class="btn-hire" data-aos="fade-up">Call Me</a>
         </div>
     </section> 
+
+    <section class="archives" id="archives">
+        <div class = archives-container>
+            <h1 class="Archives-title " data-aos="fade-up"
+     data-aos-anchor-placement="center-bottom">Has Been Maintenance</h1>
+        </div>
+
+
+
+    </section>
     </body>
 
     <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ 
+    <script>
+  AOS.init();
+</script>
 
 </body>
 </html>
