@@ -8,7 +8,7 @@
 }
 
 body {
-    background: #080808;
+    background: radial-gradient(circle at top left, rgba(0,255,213,0.25), transparent 30%), #080808;
     color: white;
     overflow-x: hidden;
 }
@@ -27,16 +27,16 @@ body {
 
 #loader.fade-out { transform: translateY(-100%); }
 .loader-content { text-align: center; }
-.anim-sub { color: #00ffd5; letter-spacing: 2px; }
+.anim-sub { color: #00ffd5; letter-spacing: 3px; display: inline-block; margin-right: 2px; margin-left: 2px;}
 .anim-title { font-size: 3rem; margin: 10px 0; }
-.loading-bar { width: 0; height: 3px; background: #00ffd5; animation: fillBar 2s forwards; }
+.loading-bar { width: 0; height: 3px; background: #00ffd5; animation: fillBar 1.6s forwards; animation-delay: 1.3s; }
 @keyframes fillBar { to { width: 100%; } }
 
 /* --- NAVBAR --- */
 .navbar {
     position: fixed;
     top: 0; width: 100%;
-    padding: 20px 10%;
+    padding: 15px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -53,7 +53,7 @@ body {
 .nav-links{
     display: flex;
     justify-content: center;
-    gap: 20px;
+    gap: 50px;
 }
    .nav-links a {
          position: relative;
@@ -61,6 +61,7 @@ body {
          color: white;
          font-weight: 5000px;
          padding: 2px 0;
+         transition: 0.3s;
     }
 
     .nav-links a::after {
@@ -71,13 +72,20 @@ body {
         width: 0;
         height: 2px;
         background: #00ffd5;
-        transition: width 0.3s ease-in-out;
+        transition: width 0.3s 
+        ease-in-out;
+
     }
 
     .nav-links a:hover::after {
         width: 100%;
     }
-.nav-links a:hover { color: #00ffd5; }
+
+    .nav-links a.active::after {
+        width: 100%;
+    }
+
+    .nav-links a:hover { color: #00ffd5; }
 
 /* --- HERO SECTION --- */
 .hero {
@@ -90,8 +98,9 @@ body {
 .hero-text { flex: 1; }
 .hero-text h1 { font-size: 50px; font-weight: 700; line-height: 1.2; }
 .hero-text h3 { font-size: 25px; margin: 10px 0; }
-.typing-text { color: #00ffd5; }
+.typing-text { color: #00ffd5; text-shadow: 0 0 20px #00ffd5;}
 .hero-text p { margin: 20px 0; line-height: 1.6; color: #eee; }
+
 
 .social-icons { margin-bottom: 30px; }
 .social-icons a {
@@ -141,6 +150,8 @@ body {
     border-radius: 20%;
     color: #eee;
 }
+
+
 .btn-hire {
     padding: 10px 40px;
     background: #00ffd5;
@@ -149,7 +160,8 @@ body {
     border-radius: 20px;
     font-weight: 600;
     box-shadow: 0 0 5px #00ffd5;
-    transition: 0.3s;
+    transition: 0.3s ease;
+    display: inline-block;
 }
 
 .btn-hire:hover {
@@ -166,9 +178,9 @@ body {
 .img-box {
     width: 300px; height: 300px;
     border-radius: 50%;
-    border: 2px solid #00ffd5;
+    border: 2px solid #00ffd573;
     overflow: hidden;
-    box-shadow: 0 0 20px #00ffd5;
+    box-shadow: 0 0 20px #00ffd5cb;
     transition: 0.3s ease-in-out;
     margin-top: 2px;
     
@@ -178,7 +190,7 @@ body {
     width: 280px; height: 280px;
     box-shadow: 0 0 45px rgb(92, 225, 204);
     transition: 0.2s ease-out;
-    border: 7px solid rgb(92, 225, 204);
+    border:  x solid rgb(0, 255, 238);
     border-radius: 50%;
 }
 .img-box img { 
@@ -240,22 +252,22 @@ body {
 
     .hero-text h1 { font-size: 40px; font-weight: 700; line-height: 1.2; }
     .hero-text h3 { font-size: 20px; margin: 10px 0; }
-    .typing-text { color: #00ffd5; font-size: 40px;}
+    .typing-text { color: #00ffd5; text-shadow: 0 0 30px #00ffd5 ; font-size: 40px;}
 
     .img-box {
         width: 190px; height: 190px;
         border-radius: 50%;
-        border: 2px solid #00ffd5;
+        border: 2px solid #00ffd5c1;
         overflow: hidden;
-        box-shadow: 0 0 20px #00ffd5;
-        transition: 0.3s ease-in-out;
+        box-shadow: 0 0 20px #00ffd5b6;
+        transition: 0.3s ease-in-out !important;
     }
 
     .img-box:hover {
          width: 180px; height: 180px;
-         box-shadow: 0 0 25px rgb(92, 225, 204);
+         box-shadow: 0 0 35px rgb(92, 225, 204);
          transition: 0.2s ease-out;
-        border: 7px solid rgb(92, 225, 204);
+        border: 4px solid rgb(92, 225, 204);
         border-radius: 50%;
     }
 
@@ -399,17 +411,17 @@ body {
 
 .text2 {
     text-decoration: none;
-    transition: 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
 .text2:hover {
     color: white;
-    text-shadow: 0 0 1px #ffffff;
     font-size: 100%;
     margin-top: 25px;
-    margin-bottom: 30px;
-    
+    margin-bottom: 25px;
 }
+
+
 
 
 
@@ -432,7 +444,7 @@ body {
 
 .imageReveal {
     animation: imageReveal both;
-    animation-timeline: view(50% auto);
+    animation-timeline: view(90% auto);
 }
 
 @keyframes imageReveal {
@@ -469,9 +481,9 @@ html {
 
 
 
-/* Archives Edit */
+/* contact Edit */
 
-.archives {
+.contact {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -533,8 +545,9 @@ html {
 }
 
 .zoom-out {
-    animation: zoomOut 1s ease-in-out forwards;
-    animation-delay: 1.8s;
+    animation: zoomOut 1.3s ease forwards;
+    animation-delay: 2.6s;
+    opacity: 0;
 }
 
 @keyframes zoomOut {
@@ -554,7 +567,8 @@ html {
 
 .fadeup {
     animation: fadeUp 1s ease-in forwards;
-    animation-delay: 1.8s;
+    animation-delay: 2690ms;
+    opacity: 0;
 }
 
 @keyframes fadeUp {
@@ -574,13 +588,14 @@ html {
 
 .fadeup1 {
     animation: fadeUp1 1s ease-in forwards;
-    animation-delay: 1.9s;
+    animation-delay: 2770ms;
+    opacity: 0;
 }
 
 @keyframes fadeUp1 {
     0% {
         opacity: 0;
-        transform: translateY(40px);;
+        transform: translateY(50px);;
     }
     60% {
         transform: translateY(-5px);
@@ -594,7 +609,8 @@ html {
 
 .fadeup2 {
     animation: fadeUp2 1s ease-in forwards;
-    animation-delay: 2.0s;
+    animation-delay: 2850ms;
+    opacity: 0;
 }
 
 @keyframes fadeUp2 {
@@ -614,7 +630,8 @@ html {
 
 .fadeup3 {
     animation: fadeUp3 1s ease-in forwards;
-    animation-delay: 2.1s;
+    animation-delay: 2930ms;
+    opacity: 0;
 }
 
 @keyframes fadeUp3 {
@@ -633,8 +650,9 @@ html {
 }
 
 .fadeup4 {
-    animation: fadeUp4 1s ease-in forwards;
-    animation-delay: 2.2s;
+    animation: fadeUp4 1.2s ease-in forwards;
+    animation-delay: 3010ms;
+    opacity: 0;
 }
 
 @keyframes fadeUp4 {
@@ -652,19 +670,112 @@ html {
     }
 }
 
-/* uji coba */
-.fadeup5 {
-    animation: fadeUp5 4s ease-in-out forwards;
-    animation-delay: 2.3s;
+.fadeup-leader {
+    animation: fadeUpLeader 1s ease-in forwards;
+    animation-delay: 1200ms;
+    opacity: 0;
 }
 
-@keyframes fadeUp5 {
+@keyframes fadeUpLeader {
     0% {
         opacity: 0;
-        transform: translateY(40px);;
+        transform: translateY(20px);;
     }
-    70% {
-        transform: translateY(-10px);
+    60% {
+        transform: translateY(-5px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fadeup-leader1 {
+    animation: fadeUpLeader1 1s ease-in forwards;
+    animation-delay: 1200ms;
+    opacity: 0;
+}
+
+@keyframes fadeUpLeader1 {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);;
+    }
+    60% {
+        transform: translateY(-5px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.fade-right {
+    animation: fadeRight 1000ms ease forwards;
+    animation-delay : 0;
+    
+}
+
+@keyframes fadeRight {
+    0% {
+        transform: translateX(-40px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.fade-right1 {
+    animation: fadeRight1 1150ms ease forwards;
+    animation-delay : 200ms;
+    opacity: 0;
+}
+
+@keyframes fadeRight1 {
+    0% {
+        transform: translateX(-20px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.fade-right2 {
+    animation: fadeRight2 1300ms ease forwards;
+    animation-delay : 350ms;
+    opacity: 0;
+}
+
+@keyframes fadeRight2 {
+    0% {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.fade-down {
+    animation: fadeDown 1.2s ease-in forwards;
+    animation-delay: 3010ms;
+    opacity: 0;
+}
+
+@keyframes fadeDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);;
+    }
+    60% {
+        transform: translateY(5px);
         opacity: 1;
     }
     100% {

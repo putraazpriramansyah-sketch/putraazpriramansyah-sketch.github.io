@@ -8,8 +8,8 @@ window.addEventListener('load', () => {
              loader.style.display = 'none';
 
     document.body.style.overflowY = "auto"; 
-            }, 1000);
-        }, 2100);   
+            }, 700);
+        }, 2800);   
 });   
 
 // Typing Effect
@@ -58,4 +58,26 @@ navLinks.classList.remove('active');
     };
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll(".nav-links a");
+
+  window.addEventListener("scroll", () => {
+    let scrollY = window.scrollY + 200;
+
+    sections.forEach(sec => {
+      let top = sec.offsetTop;
+      let height = sec.offsetHeight;
+      let id = sec.getAttribute("id");
+
+      if (scrollY >= top && scrollY < top + height) {
+        navLinks.forEach(a => a.classList.remove("active"));
+        const link = document.querySelector(`.nav-links a[href="#${id}"]`);
+        if (link) link.classList.add("active");
+      }
+    });
+  });
+
+});
 
