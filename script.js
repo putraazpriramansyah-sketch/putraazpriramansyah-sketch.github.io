@@ -42,19 +42,35 @@ function typeEffect() {
 }
 typeEffect();
 
-const menuIcon = document.querySelector('#menu-icon');
+const menuIcon = document.querySelector('#menu-toggle');
 const navLinks = document.querySelector('.nav-links');
+
+const iconToggle = menuIcon.querySelector('i');
 
 menuIcon.onclick = () => {
 
-navLinks.classList.toggle('active'); 
-    console.log("Tombol Diklik");
+navLinks.classList.toggle('active');
+    // untuk trigger animasi menu ke X
+    menuIcon.classList.toggle('is-active');
+    iconToggle.style.opacity = '0';
+    setTimeout(() => {
+    // logika ganti ikon x
+if (navLinks.classList.contains('active')){
+    // kalau menu kebuka ganti jadi ikon X
+    iconToggle.classList.replace('fa-bars','fa-xmark');
+}   else {
+    // kalau ditutup balik lagi
+    iconToggle.classList.replace('fa-xmark', 'fa-bars');
+}
+    iconToggle.style.opacity = '1';
+}, 200);
 };
 
 document.querySelectorAll('.nav-links a').forEach(link => {
     link.onclick = () => {
 
-navLinks.classList.remove('active');
+        navLinks.classList.remove('active');
+        iconToggle.classList.replace('fa-xmark','fa-bars');
     };
 });
 
@@ -80,4 +96,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
 });
+
+const menuToggle = document
 

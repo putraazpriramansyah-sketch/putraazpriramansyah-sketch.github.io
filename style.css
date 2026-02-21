@@ -8,7 +8,7 @@
 }
 
 body {
-    background: radial-gradient(circle at top left, rgba(0,255,213,0.25), transparent 30%), #080808;
+    background: radial-gradient(circle at top left, rgba(0,255,213,0.25), transparent 20%), #080808;
     color: white;
     overflow-x: hidden;
 }
@@ -35,25 +35,31 @@ body {
 /* --- NAVBAR --- */
 .navbar {
     position: fixed;
-    top: 0; width: 100%;
-    padding: 15px 5%;
+    top: 0px; width: 96%;
+    padding: 15px 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: rgba(8, 8, 8, 0.8);
-    backdrop-filter: blur(10px);
+    background: rgba(8, 8, 8, 0.379);
+    backdrop-filter: blur(0px);
     z-index: 1000;
 }
 .logo { 
     font-size: 20px; 
+    margin-left: 0px;
     font-weight: 700; 
     color: #00ffd5;
- }
+    text-shadow: 0 0 10px #00ffd5;
+    z-index: 2002;
+    position: relative;
+}
+
+
 
 .nav-links{
     display: flex;
     justify-content: center;
-    gap: 50px;
+    gap: 40px;
 }
    .nav-links a {
          position: relative;
@@ -92,8 +98,9 @@ body {
     height: 100vh;
     display: flex;
     align-items: center;
-    padding: 0 4%;
+    padding: 0 6%;
     gap: 3rem;
+    margin-top: -40px;
 }
 .hero-text { flex: 1; }
 .hero-text h1 { font-size: 50px; font-weight: 700; line-height: 1.2; }
@@ -213,41 +220,90 @@ body {
     /* munculin ikon di hp */
     .menu-icon {
         display: block;
+        z-index: 2001;
+        margin-right: -10px;
     }
 
-    .nav-links {
+    .navbar {
+        top: 0 ; width: 100%;
+        position: fixed;
+        z-index: 2000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 10%;
+    }
+
+    #menu-toggle {
+        z-index: 2001;
+        cursor: pointer;
+    }
+ 
+
+.nav-links {
         position: fixed; 
         top: 0; 
-        right: -100%; /* sembunyi di kanann luar layar */
-        width: 70%; 
-        height: 100vh; 
-        background: rgba(8, 8, 8, 0.95);
+        width: 100%; 
+        left: 0;
+        height: auto; 
+        padding: 25px 0;
+        background: #041513;
         display: flex; 
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: 30px;
+        padding-left: 35px;
+        padding-top: 100px;
         justify-content: center;
         transition: 0.5s ease;
         z-index: 2000;
-}
-
-    /* pas menu aktif, dia geser msuk ke layar */
-    .nav-links.active {
-         right: 0; 
-         z-index: 2001;
+        border-radius: 0;
+        transition: all 1s ease cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        opacity: 0;
+        transform: translateY(-100px);
     }
 
+      /* pas menu aktif, dia geser msuk ke layar */
+    .nav-links.active {
+         top: 0; 
+         left: 0;
+         z-index: 2001;
+         opacity: 1;
+         transform: translateY(0);
+    }
+    .nav-links li {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.4s ease;
+        list-style: none;
+    }
+
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .nav-links.active li:nth-child(1) { transition-delay: 0.1s;}
+    .nav-links.active li:nth-child(2) { transition-delay: 0.2s;}
+    .nav-links.active li:nth-child(3) { transition-delay: 0.3s;}
+    .nav-links.active li:nth-child(4) { transition-delay: 0.4s;}
+
+  
+
     .hero { 
-        flex-direction: column-reverse;
-        text-align: center;
+        text-align: left;
         padding-top: 100px;
         height: 100%;
+        flex-direction: column;
+        padding: 80px 0%;
+        margin-left: 20px;
+        margin-top: 0;
     }
     
     .hero-text {
         font-size: 80%;
-        text-align: center;
-        justify-content: center;
+        text-align: left;
+        justify-content: left ;
     }
 
     .hero-text h1 { font-size: 40px; font-weight: 700; line-height: 1.2; }
@@ -370,6 +426,10 @@ body {
     }
 }
 
+.logo {
+    margin-left: -5px;
+}
+
 /* guidefs official */
 .typing {
     margin-top: 5px;
@@ -380,6 +440,8 @@ body {
     overflow: hidden;
     width: 0;
     animation: typing 5s steps(21) forwards, blink 0.7s steps(1)30, hideCursor 0s 4s forwards;
+    text-align: left !important;
+    display: block;
 }
 
 
@@ -400,12 +462,13 @@ body {
 .text1 {
     text-decoration: none;
     transition: 0.3s ease-in-out;
+    margin-top: 5px !important ;
 }
 
 .text1:hover {
     color: white;
     font-size: 100%;
-    margin-top: 25px;
+    margin-top: 10px !important;
     margin-bottom: 30px;
 }
 
@@ -426,12 +489,7 @@ body {
 
 
 @media (max-width: 768px) {
-    .typing {
-        display: block;
-        text-align: center;
-        margin: 0 auto;
-        margin-top: 5px;
-    }
+
 
     .social-icons a {
         margin-left: 7px;
